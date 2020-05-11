@@ -5,7 +5,7 @@
 Mount:
 
 ```
-docker run -it -v $(pwd)/src:/pintos johnstarich/pintos bash
+docker run -it -v "$(pwd)/src:/pintos" johnstarich/pintos bash
 ```
 
 Build:
@@ -35,8 +35,10 @@ Source: [JohnStarich/docker-pintos](https://github.com/JohnStarich/docker-pintos
 # Fix ACPI bug
 ## Fix described here under "Troubleshooting": http://arpith.xyz/2016/01/getting-started-with-pintos/
 sed -i '/serial_flush ();/a outw( 0x604, 0x0 | 0x2000 );' /pintos/devices/shutdown.c
+
 # Configure Pintos for QEMU
 sed -i 's/bochs/qemu/' /pintos/*/Make.vars
+
 ## Reconfigure Pintos to use QEMU
 sed -i 's/\/usr\/class\/cs140\/pintos\/pintos\/src/\/pintos/' /pintos/utils/pintos-gdb
 sed -i 's/LDFLAGS/LDLIBS/' /pintos/utils/Makefile
