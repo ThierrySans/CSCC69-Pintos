@@ -618,7 +618,7 @@ sub run_qemu {
       if $vga eq 'terminal';
     print "warning: qemu doesn't support jitter\n"
       if defined $jitter;
-    my (@cmd) = ('qemu-system-x86_64');
+    my (@cmd) = ('qemu-system-i386');
     push (@cmd, '-device', 'isa-debug-exit');
 
     push (@cmd, '-hda', $disks[0]) if defined $disks[0];
