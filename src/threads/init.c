@@ -129,8 +129,12 @@ main (void)
 
   printf ("Boot complete.\n");
   
-  /* Run actions specified on kernel command line. */
-  run_actions (argv);
+  if (*argv != NULL) {
+    /* Run actions specified on kernel command line. */
+    run_actions (argv);
+  } else {
+    // TODO: no command line passed to kernel. Run interactively 
+  }
 
   /* Finish up. */
   shutdown ();
