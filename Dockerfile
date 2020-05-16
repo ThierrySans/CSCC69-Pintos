@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 MAINTAINER Thierry Sans <thierry.sans@utoronto.ca>
 
-RUN apt-get update && apt-get -y install bash git build-essential gdb gcc emacs vim nano qemu wget xorg-dev libncursesw5 libncurses5-dev
+RUN apt-get update && apt-get -y install bash git build-essential gdb gcc emacs vim nano qemu wget xorg-dev libncursesw5 libncurses5-dev dos2unix
 
 RUN apt-get clean autoclean && rm -rf /var/lib/apt/* /var/lib/cache/* /var/lib/log/*
 
