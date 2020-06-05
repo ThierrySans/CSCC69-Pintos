@@ -1,11 +1,27 @@
 FROM ubuntu:18.04
 MAINTAINER Thierry Sans <thierry.sans@utoronto.ca>
 
-RUN apt-get update && apt-get -y install bash git build-essential gdb gcc emacs vim nano qemu wget xorg-dev libncursesw5 libncurses5-dev dos2unix
+RUN apt-get update \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+    bash \
+    build-essential \
+    gdb \
+    gcc \
+    emacs \
+    vim \
+    nano \
+    qemu \
+    wget \
+    xorg-dev \
+    libncursesw5 \
+    libncurses5-dev \
+    dos2unix \
+    expect \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get clean autoclean && rm -rf /var/lib/apt/* /var/lib/cache/* /var/lib/log/*
-
-RUN git clone https://github.com/ThierrySans/CSCC69-Pintos /pintos
+RUN mkdir -p /pintos/src
+COPY ./src /pintos/src
 
 ENV PINTOS_HOME=/pintos
 ENV PATH=/pintos/src/utils:$PATH
