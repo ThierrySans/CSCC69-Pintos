@@ -622,7 +622,11 @@ sub run_qemu {
     push (@cmd, '-device', 'isa-debug-exit');
 
     push (@cmd, '-drive', 'file='.$disks[0].',index=0,media=disk,format=raw') if defined $disks[0];
-    # push (@cmd, '-hdb', $disks[1]) if defined $disks[1];
+    push (@cmd, '-drive', 'file='.$disks[1].',index=1,media=disk,format=raw') if defined $disks[1];
+    push (@cmd, '-drive', 'file='.$disks[2].',index=2,media=disk,format=raw') if defined $disks[2];
+    push (@cmd, '-drive', 'file='.$disks[3].',index=3,media=disk,format=raw') if defined $disks[3];
+    # push (@cmd, '-hda', $disks[0]) if defined $disks[0];
+    # push (@cmd, '-hda', $disks[1]) if defined $disks[1];
     # push (@cmd, '-hdc', $disks[2]) if defined $disks[2];
     # push (@cmd, '-hdd', $disks[3]) if defined $disks[3];
     push (@cmd, '-m', $mem);
