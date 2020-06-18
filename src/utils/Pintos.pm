@@ -143,7 +143,7 @@ sub set_align {
 #   ALIGN => 'bochs' (default), 'full', or 'none'
 #   GEOMETRY => {H => heads, S => sectors per track} (default 16, 63)
 #   FORMAT => 'partitioned' (default) or 'raw'
-#   LOADER => $LOADER_SIZE-byte string containing the /pintos/src/threads/build/loader.binary
+#   LOADER => $LOADER_SIZE-byte string containing the loader.binary
 #   ARGS => ['arg 1', 'arg 2', ...]
 sub assemble_disk {
     my (%args) = @_;
@@ -359,7 +359,7 @@ sub cyl_sectors {
 # Makes sure that the loader is a reasonable size.
 sub read_loader {
     my ($name) = @_;
-    $name = find_file ("/pintos/src/threads/build/loader.bin") if !defined $name;
+    $name = find_file ("loader.bin") if !defined $name;
     die "Cannot find loader\n" if !defined $name;
 
     my ($handle);
