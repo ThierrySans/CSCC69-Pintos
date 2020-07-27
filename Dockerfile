@@ -17,6 +17,7 @@ RUN apt-get update \
     libncurses5-dev \
     dos2unix \
     expect \
+    rsync \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
