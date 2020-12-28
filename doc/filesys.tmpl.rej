@@ -1,0 +1,95 @@
+***************
+*** 1,8 ****
+-        	       	     +-------------------------+
+- 		     |		CS 140	       |
+- 		     | PROJECT 4: FILE SYSTEMS |
+- 		     |	   DESIGN DOCUMENT     |
+- 		     +-------------------------+
+  
+  ---- GROUP ----
+  
+--- 1,8 ----
++              +-------------------------+
++              |         CS 140          |
++              | PROJECT 4: FILE SYSTEMS |
++              |     DESIGN DOCUMENT     |
++              +-------------------------+
+  
+  ---- GROUP ----
+  
+***************
+*** 21,28 ****
+  >> preparing your submission, other than the Pintos documentation, course
+  >> text, lecture notes, and course staff.
+  
+- 		     INDEXED AND EXTENSIBLE FILES
+- 		     ============================
+  
+  ---- DATA STRUCTURES ----
+  
+--- 21,28 ----
+  >> preparing your submission, other than the Pintos documentation, course
+  >> text, lecture notes, and course staff.
+  
++              INDEXED AND EXTENSIBLE FILES
++              ============================
+  
+  ---- DATA STRUCTURES ----
+  
+***************
+*** 60,67 ****
+  >> structure, and what advantages and disadvantages does your
+  >> structure have, compared to a multilevel index?
+  
+- 			    SUBDIRECTORIES
+- 			    ==============
+  
+  ---- DATA STRUCTURES ----
+  
+--- 60,67 ----
+  >> structure, and what advantages and disadvantages does your
+  >> structure have, compared to a multilevel index?
+  
++                 SUBDIRECTORIES
++                 ==============
+  
+  ---- DATA STRUCTURES ----
+  
+***************
+*** 91,98 ****
+  >> B6: Explain why you chose to represent the current directory of a
+  >> process the way you did.
+  
+- 			     BUFFER CACHE
+- 			     ============
+  
+  ---- DATA STRUCTURES ----
+  
+--- 91,98 ----
+  >> B6: Explain why you chose to represent the current directory of a
+  >> process the way you did.
+  
++                  BUFFER CACHE
++                  ============
+  
+  ---- DATA STRUCTURES ----
+  
+***************
+*** 123,130 ****
+  >> C7: Describe a file workload likely to benefit from buffer caching,
+  >> and workloads likely to benefit from read-ahead and write-behind.
+  
+- 			   SURVEY QUESTIONS
+- 			   ================
+  
+  Answering these questions is optional, but it will help us improve the
+  course in future quarters.  Feel free to tell us anything you
+--- 123,130 ----
+  >> C7: Describe a file workload likely to benefit from buffer caching,
+  >> and workloads likely to benefit from read-ahead and write-behind.
+  
++                SURVEY QUESTIONS
++                ================
+  
+  Answering these questions is optional, but it will help us improve the
+  course in future quarters.  Feel free to tell us anything you

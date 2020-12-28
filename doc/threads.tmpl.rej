@@ -1,0 +1,97 @@
+***************
+*** 1,9 ****
+- 			+--------------------+
+- 			|        CS 140      |
+- 			| PROJECT 1: THREADS |
+- 			|   DESIGN DOCUMENT  |
+- 			+--------------------+
+- 				   
+  ---- GROUP ----
+  
+  >> Fill in the names and email addresses of your group members.
+--- 1,9 ----
++             +--------------------+
++             |        CS 140      |
++             | PROJECT 1: THREADS |
++             |   DESIGN DOCUMENT  |
++             +--------------------+
++ 
+  ---- GROUP ----
+  
+  >> Fill in the names and email addresses of your group members.
+***************
+*** 21,28 ****
+  >> preparing your submission, other than the Pintos documentation, course
+  >> text, lecture notes, and course staff.
+  
+- 			     ALARM CLOCK
+- 			     ===========
+  
+  ---- DATA STRUCTURES ----
+  
+--- 21,28 ----
+  >> preparing your submission, other than the Pintos documentation, course
+  >> text, lecture notes, and course staff.
+  
++                  ALARM CLOCK
++                  ===========
+  
+  ---- DATA STRUCTURES ----
+  
+***************
+*** 51,58 ****
+  >> A6: Why did you choose this design?  In what ways is it superior to
+  >> another design you considered?
+  
+- 			 PRIORITY SCHEDULING
+- 			 ===================
+  
+  ---- DATA STRUCTURES ----
+  
+--- 51,58 ----
+  >> A6: Why did you choose this design?  In what ways is it superior to
+  >> another design you considered?
+  
++              PRIORITY SCHEDULING
++              ===================
+  
+  ---- DATA STRUCTURES ----
+  
+***************
+*** 86,93 ****
+  >> B7: Why did you choose this design?  In what ways is it superior to
+  >> another design you considered?
+  
+- 			  ADVANCED SCHEDULER
+- 			  ==================
+  
+  ---- DATA STRUCTURES ----
+  
+--- 86,93 ----
+  >> B7: Why did you choose this design?  In what ways is it superior to
+  >> another design you considered?
+  
++               ADVANCED SCHEDULER
++               ==================
+  
+  ---- DATA STRUCTURES ----
+  
+***************
+*** 137,144 ****
+  >> type and/or a set of functions or macros to manipulate fixed-point
+  >> numbers, why did you do so?  If not, why not?
+  
+- 			   SURVEY QUESTIONS
+- 			   ================
+  
+  Answering these questions is optional, but it will help us improve the
+  course in future quarters.  Feel free to tell us anything you
+--- 137,144 ----
+  >> type and/or a set of functions or macros to manipulate fixed-point
+  >> numbers, why did you do so?  If not, why not?
+  
++                SURVEY QUESTIONS
++                ================
+  
+  Answering these questions is optional, but it will help us improve the
+  course in future quarters.  Feel free to tell us anything you
