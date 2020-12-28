@@ -43,4 +43,4 @@ jobs:
           push: true
           tags: |
             thierrysans/pintos:latest
-            ghcr.io/ThierrySans/pintos:latest
+            ghcr.io/thierrysans/pintos:latest
