@@ -15,15 +15,17 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build-and-publish:
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master' # Running this job only for develop branch
-
-    steps:
-    - uses: actions/checkout@v2 # Checking out the repo
-
-    - name: Build and Publish Docker image
-      uses: VaultVulp/gp-docker-action@1.1.7
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages
-        image-name: pintos # Provide Docker image name
+  push_to_registry:
+      name: Push Docker image to GitHub Packages
+      runs-on: ubuntu-latest
+      steps:
+        - name: Check out the repo
+          uses: actions/checkout@v2
+        - name: Push to GitHub Packages
+          uses: docker/build-push-action@v1
+          with:
+            username: ${{ github.actor }}
+            password: ${{ secrets.GITHUB_TOKEN }}
+            registry: docker.pkg.github.com
+            repository: ThierrySans/CSCC69-Pintos/pintos
+            tag_with_ref: true
