@@ -153,10 +153,9 @@ You should think about synchronization throughout.
 @node Project 4 Design Document
 @subsection Design Document
 
-Before you turn in your project, you must copy @uref{filesys.tmpl, , the
-project 4 design document template} into your source tree under the name
-@file{pintos/src/filesys/DESIGNDOC} and fill it in.  We recommend that
-you read the design document template before you start working on the
+Before you turn in your project, you must fill the @uref{filesys.tmpl, , the
+project 4 design document template} that is under @file{pintos/design/filesys.tpml}.
+We recommend that you read the design document template before you start working on the
 project.  @xref{Project Documentation}, for a sample design document
 that goes along with a fictitious project.
 
