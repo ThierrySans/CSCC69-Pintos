@@ -47,7 +47,7 @@ To get started, you'll have to use a machine with Docker installed. At Universit
 First let's test the Pintos docker image:
 
 @verbatim
-$ docker run --rm -w /pintos/src/threads/build thierrysans/pintos pintos -q run alarm-zero
+$ docker run --rm --name pintos -w /pintos/src/threads/build thierrysans/pintos pintos -q run alarm-zero
 @end verbatim
 
 It should run Pintos and execute the command @code{alarm-zero} before quitting (option @code{-q}):
@@ -78,7 +78,7 @@ Powering off...
 By default, the command @code{pintos} runs the QEMU simulator. You can as well choose to run the @code{Bochs} simulator:
 
 @verbatim
-$ docker run --rm     -w /pintos/src/threads/build thierrysans/pintos pintos --bochs -- -q run alarm-zero
+$ docker run --rm --name pintos -w /pintos/src/threads/build thierrysans/pintos pintos --bochs -- -q run alarm-zero
 @end verbatim
 
 and the output should look like this: 
@@ -203,7 +203,7 @@ on your own machine.  Otherwise, you can ignore them.
 As the next step, build the source code supplied for the first project. First, run the docker container with a mount of your source:
 
 @verbatim
-$ docker run --rm     -it -v "$(pwd):/pintos" thierrysans/pintos bash
+$ docker run --rm --name pintos -it -v "$(pwd):/pintos" thierrysans/pintos bash
 @end verbatim 
 
 Once in the Docker container, you should build the utils directory (first time only):
