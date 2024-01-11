@@ -98,7 +98,6 @@ shutdown_power_off (void)
 
   printf ("Powering off...\n");
   serial_flush ();
-outw( 0x604, 0x0 | 0x2000 );
 
   /* ACPI power-off */
   outw (0xB004, 0x2000);
