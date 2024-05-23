@@ -18,4 +18,4 @@ jobs:
 
     - name: Run Pintos
       run: |
-        docker run --rm --name pintos -it -v "$(pwd):/pintos" thierrysans/pintos bash
+        docker run --rm --name pintos -it -v "${{ github.workspace }}:/pintos" thierrysans/pintos bash
