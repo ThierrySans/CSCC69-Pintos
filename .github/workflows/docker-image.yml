@@ -1,0 +1,21 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    - name: Pull Docker image
+      run: docker pull thierrysans/pintos
+
+    - name: Run Pintos tests
+      run: |
+        docker run --rm --name pintos -w /pintos/src/threads/build thierrysans/pintos pintos -q run alarm-zero
