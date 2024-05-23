@@ -16,6 +16,6 @@ jobs:
     - name: Pull Docker image
       run: docker pull thierrysans/pintos
 
-    - name: Run Pintos tests and build utils
+    - name: Run Pintos
       run: |
-        docker run --rm --name pintos -w /pintos/src/threads/build thierrysans/pintos /bin/bash -c "pintos -q run alarm-zero && cd /pintos/src/utils && make  && cd /pintos/src/threads && make"
+        docker run --rm --name pintos -it -v "$(pwd):/pintos" thierrysans/pintos bash
