@@ -20,6 +20,9 @@
    of thread.h for details. */
 #define THREAD_MAGIC 0xcd6abf4b
 
+/* List of sleeping processes. */
+static struct list sleeping_list;
+
 /* List of processes in THREAD_READY state, that is, processes
    that are ready to run but not actually running. */
 static struct list ready_list;
@@ -90,6 +93,7 @@ thread_init (void)
   ASSERT (intr_get_level () == INTR_OFF);
 
   lock_init (&tid_lock);
+  list_init (&sleeping_list);
   list_init (&ready_list);
   list_init (&all_list);
 
@@ -137,6 +141,39 @@ thread_tick (void)
   /* Enforce preemption. */
   if (++thread_ticks >= TIME_SLICE)
     intr_yield_on_return ();
+}
+
+void
+update_ticks_for_sleeping_threads() {
+  struct list_elem *sleeping_thread;
+
+  for (sleeping_thread = list_begin (&sleeping_list); 
+       sleeping_thread != list_end (&sleeping_list);
+       sleeping_thread = list_next (sleeping_thread))
+    {
+      struct sleeping_thread *t = 
+        list_entry (sleeping_thread, struct sleeping_thread, elem);
+
+      t->ticks--;
+      
+      if (t->ticks<=0) 
+        {
+          sema_up(t->semaphore);
+          list_remove(&t->elem);
+        }
+    }
+}
+
+void
+insert_sleeping_thread(struct thread* t, struct semaphore* semaphore, int64_t ticks) {
+  struct sleeping_thread *st = malloc (sizeof *st);
+  if (st == NULL)
+    PANIC ("Failed to allocate memory for sleeping thread");
+  
+  list_push_back (&sleeping_list, &st->elem);
+  st->thread = t;
+  st->semaphore = semaphore;
+  st->ticks = ticks;
 }
 
 /* Prints thread statistics. */

@@ -102,6 +102,14 @@ struct thread
     unsigned magic;                     /* Detects stack overflow. */
   };
 
+struct sleeping_thread
+  {
+    struct thread *thread;
+    struct semaphore *semaphore;
+    int64_t ticks;
+    struct list_elem elem;
+  };
+
 /* If false (default), use round-robin scheduler.
    If true, use multi-level feedback queue scheduler.
    Controlled by kernel command-line option "-o mlfqs". */
@@ -111,6 +119,8 @@ void thread_init (void);
 void thread_start (void);
 
 void thread_tick (void);
+void update_ticks_for_sleeping_threads(void);
+void insert_sleeping_thread(struct thread* t, struct semaphore* semaphore, int64_t ticks);
 void thread_print_stats (void);
 
 typedef void thread_func (void *aux);
